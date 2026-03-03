@@ -35,6 +35,9 @@
     first-line-indent: 0pt,
   )
 
+  // ── Überschriften-Nummerierung ───────────────────────────────────────────
+  set heading(numbering: "1.1")
+
   // ── Überschriften-Abstände (entspricht \RedeclareSectionCommand) ─────────
   show heading.where(level: 1): it => {
     block(above: 12pt, below: 5pt, it)

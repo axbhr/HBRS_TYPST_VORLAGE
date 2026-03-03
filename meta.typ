@@ -9,7 +9,10 @@
 
 #let thesis-keywords          = "Keywords die diese Arbeit beschreiben"
 #let thesis-location          = "Sankt Augustin"
-#let thesis-pub-date          = datetime.today().display(" [day]. [month repr:long] [year]")
+#let _monate = ("Januar", "Februar", "März", "April", "Mai", "Juni",
+                 "Juli", "August", "September", "Oktober", "November", "Dezember")
+#let _today  = datetime.today()
+#let thesis-pub-date = str(_today.day()) + ". " + _monate.at(_today.month() - 1) + " " + str(_today.year())
 
 #let thesis-subject           = "Worum es geht"
 #let thesis-study-course      = "Computer Science"

@@ -8,7 +8,7 @@
   gutter: 12pt,
   // Logo
   align(bottom,
-    image("../../bilder/fhlogo.pdf", height: 4em)
+    image("../bilder/fhlogo.pdf", height: 4em)
   ),
   // Universitätsname
   align(left + bottom)[
@@ -27,7 +27,7 @@
   #text(size: 24pt, weight: "bold")[#thesis-subject-type]
 
   #v(1em)
-  #text(size: 14pt)[im #(thesis-type)-Studiengang #thesis-study-course]
+  #text(size: 14pt)[im #(thesis-type)-Studiengang #thesis-study-course-german]
 
   #v(0.10 * 29.7cm)
 
@@ -48,6 +48,7 @@
     columns: (auto, auto),
     stroke: none,
     inset: (x: 0pt, y: 3pt),
+    column-gutter: 1em,
     [Betreuer:],    [#thesis-supervisor-first],
     // [Zweitbetreuer:], [#thesis-supervisor-second],
     // [Externer Betreuer:], [#thesis-supervisor-external],

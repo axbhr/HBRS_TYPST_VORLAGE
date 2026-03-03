@@ -51,17 +51,18 @@ Blies takte uhr bibel winde all stuck wette nie wie. Licht se dahin indem seine 
 === Abbildungen
 
 #figure(
-  image("../../bilder/fhlogo.pdf", width: 3cm),
+  image("../bilder/fhlogo.pdf", width: 3cm),
   caption: [Logo Hochschule Bonn-Rhein-Sieg],
 ) <fig-logo-1>
 
 #figure(
-  image("../../bilder/fhlogo.pdf", width: 3cm),
+  image("../bilder/fhlogo.pdf", width: 3cm),
   caption: [Logo Hochschule Bonn-Rhein-Sieg],
 ) <fig-logo-2>
 
 // Wahrheitstabelle
 #figure(
+  kind: image,
   table(
     columns: 14,
     stroke: 0.5pt,
@@ -80,13 +81,13 @@ Blies takte uhr bibel winde all stuck wette nie wie. Licht se dahin indem seine 
 
 == Zitate
 
-@BarAhl08 sagen hier steht ein Text.
+@Knuth1997 sagen hier steht ein Text.
 
-@BruMurPerWygMcN09 sagen hier steht ein Text.
+@Knuth1997 sagen hier steht ein Text.
 
-„Hier steht ein Text." @BarAhl08
+„Hier steht ein Text." @Knuth1997
 
-Hier steht ein Text. #cite(<BarAhl08>, supplement: [Vgl.])
+Hier steht ein Text. #cite(<Knuth1997>, supplement: [Vgl.])
 
 Hier steht ein Text. #cite(<BruMurPerWygMcN09>, supplement: [S. 200])
 

@@ -24,8 +24,8 @@
 #set page(
   numbering: "i",
   header: [
-    #align(right, text(size: 10pt, thesis-title))
-    #v(-0.5em)
+    #align(left, text(size: 10pt, thesis-title))
+    #v(-0.1em)
     #line(length: 100%, stroke: 0.4pt)
   ],
   footer: context align(right, counter(page).display("i")),
@@ -41,14 +41,31 @@
   indent: auto,
   depth:  3,
 )
-
 // Abbildungsverzeichnis
 #pagebreak()
 #heading(numbering: none, outlined: false)[Abbildungsverzeichnis]
-#outline(
-  title:  none,
-  target: figure.where(kind: image),
-)
+#{
+  show outline.entry: it => {
+    if it.element.func() == figure {
+      block(
+        width: 100%,
+        grid(
+          columns: (auto, 1fr, auto),
+          column-gutter: 1em,
+          link(it.element.location())[#numbering("1", ..it.element.counter.at(it.element.location()))],
+          [#it.element.caption.body #box(width: 1fr, it.fill)],
+          [#counter(page).at(it.element.location()).first()],
+        )
+      )
+    } else {
+      it
+    }
+  }
+  outline(
+    title:  none,
+    target: figure.where(kind: image),
+  )
+}
 
 // Abkürzungsverzeichnis
 #pagebreak()
@@ -58,8 +75,8 @@
 #set page(
   numbering: "1",
   header: [
-    #align(right, text(size: 10pt, thesis-title))
-    #v(-0.5em)
+    #align(left, text(size: 10pt, thesis-title))
+    #v(0.3em)
     #line(length: 100%, stroke: 0.4pt)
   ],
   footer: context align(right, counter(page).display()),
@@ -80,9 +97,9 @@
 // ─── Literaturverzeichnis ────────────────────────────────────────────────────
 #pagebreak()
 #bibliography(
-  "../Literaturverzeichnis.bib",
+  "./Literaturverzeichnis.bib",
   title:  "Literaturverzeichnis",
-  style:  "chicago-author-date",
+  style:  "./aussehen/din-1505-2.csl",
   full:   false,
 )
 
